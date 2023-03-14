@@ -1,11 +1,13 @@
-const express=requie("express")
+const express=require("express")
 const app=express()
+const cors=require("cors")
 
 const mongoose =require("mongoose")
 const route=require("./routes/route")
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors())
 
 mongoose.set('strictQuery', true)
 mongoose
